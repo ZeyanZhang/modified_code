@@ -28,7 +28,7 @@ def count_barcodes(seq_file, barcode_dict) -> None:
     """
     _other_reads = list()
     # Compile regex patterns
-    flank_regex = re.compile("(GCTCATGCACTTGATTCC){e<=1}([ATGC]{18})(GACTTGACCTGGATGTCT){e<=1}")
+    flank_regex = re.compile("(GGGCACAAACTTAATCCGCTAGCTTCCATTTCAGGTGTCGTGAAGCGGCCGCACGCGTCCG){e<=3}([ATGC]{55})(CGGTAGCGGATCCGTGAGCAAGGGCGAGGAGCTGTTCACCGGGGT){e<=3}")
     barcode_regex = dict()
     for b in barcode_dict:
         barcode_regex[b] = re.compile("(%s){e<=1}" % b)
